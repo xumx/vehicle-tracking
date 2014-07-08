@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript" src="/js/infobubble-compiled.js"></script>
+	<script type="text/javascript" src="/nowjs/now.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
+	<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/main.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+	<div class="navbar" style="margin-bottom:0px;">
+		<div class="navbar-inner">
+			<div class="container">
+				<form class="navbar-form form-inline pull-right">
+					<input type="text" class="input-small" placeholder="Email">
+					<input type="password" class="input-small" placeholder="Password">
+					<button type="submit">Sign in</button>
+				</form>
+				<a class="brand" style="color:white" href="./"><b>sRADAR: A Software System for Anomaly Detection &amp; Reporting of Moving Objects</b></a>
+				<ul class="nav">
+					<li>
+						<a href="./events.html">Events Log</a>
+					</li>
+					<li>
+						<a href="./disclaimer.html">Disclaimer</a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="fill" style="padding-left:0px;padding-right:0px;">
+		<div id="map">
+		</div>
+
+		<div id="statistics">
+			<div>
+				<span class="badge badge-success" id="numberOfShips"></span> Total number of objects in range
+			</div>
+
+			<div>
+				<span class="badge badge-success" id="numberOfAnchoredShips"></span> Total number of stationary objects
+			</div>
+
+			<div>
+				<span class="badge badge-success" id="maxDistanceFromSensor"></span> Sensor Range (km)
+			</div>
+		</div>
+
+		<div class="span2" id="sidebar">
+			<input id="selectedMMSI" type="hidden"/>
+
+			<button class="fill btn btn-warning" id="editZone">
+				Edit Zone
+			</button>
+			
+			<button class="fill btn btn-warning" id="addZone">
+				Add Zone
+			</button>
+
+			<button class="fill btn btn-warning" id="domain">
+				Domain Violation
+			</button>
+
+			<button class="fill btn btn-warning" id="filter">
+				APL Filter
+			</button>
+
+			<button class="fill btn btn-warning" id="invalidmmsi">
+				Suspicious MMSI
+			</button>
+
+			<button class="fill btn btn-warning" id="refresh">
+				Reset
+			</button>
+
+			<button class="fill btn btn-warning" id="subscribeButton">
+				Subscribe
+			</button>
+
+			<input type="email" id="email" class="form-text span2" placeholder="Email"/>
+
+			<div id="ships" class="fill">
+				<table class="table">
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

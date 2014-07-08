@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="/js/angular-1.0.1.min.js"></script>
+	<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+	<script type="text/javascript">
+	function Controller($scope) {
+		$.get('./mobile', function(data) {
+			// $('.result').html(data);
+			$scope.$apply(function() {
+
+				$scope.events = JSON.parse(data).events;
+			});
+
+		});
+	}
+	</script>
+
+</head>
+
+<body ng-controller="Controller">
+	<div class="navbar" style="margin-bottom:0px;">
+		<div class="navbar-inner">
+			<div class="container">
+				<form class="navbar-form form-inline pull-right">
+					<input type="text" class="input-small" placeholder="Email">
+					<input type="password" class="input-small" placeholder="Password">
+					<button type="submit">Sign in</button>
+				</form>
+				<a class="brand" style="color:white" href="./"><b>sRADAR: Software System for Anomaly Detection &amp; Reporting of Moving Objects</b></a>
+				<ul class="nav">
+					<li>
+						<a href="./events.html">Events Log</a>
+					</li>
+					<li class="active">
+						<a href="./disclaimer.html">Disclaimer</a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+	<br/>
+	<br/>
+	<br/>
+	<div class="well" style="width:80%; margin-left:10%">
+		<h2>This demo shows a research prototype and is not subject to any license agreement with SAP. The content of this demo shall not be binding upon SAP to any particular course of business, product strategy and/or development. The cooperation between SAP and the mentioned organizations in this demo relates to the research context only.
+		</h2>
+		<br>
+		<h3>
+			For more details about this prototype and the research project please contact Dr. Baljeet Malhotra at <em>baljeet.malhotra@sap.com</em>
+		</h3>
+	</div>
+</body>
+</html>
