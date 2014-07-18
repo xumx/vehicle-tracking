@@ -1,12 +1,12 @@
 {
-    "dependencies": {
-        "express": "*",
-        "now": "*",
-        "mongodb": "*",
-    },
-    "name": "Vessel Tracking",
-    "scripts": {
-        "start": "node server.js"
-    },
-    "version": "1.0.0"
+	"dependencies": {
+		"express": "*",
+		"now": "0.7.5",
+		"mongodb": "*"
+	},
+	"name": "VesselTracking",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"version": "1.0.0"
 }

@@ -18,11 +18,11 @@ if not realtime
 	replay = process.argv[2]
 
 udpPort = 42345
-httpPort = 8083
+httpPort = 8080
 ships = {}
 udp = require("dgram").createSocket("udp4")
 exp = require("express")
-app = exp.createServer()
+app = exp()
 app.use exp.static("public")
 
 server = app.listen(httpPort)
